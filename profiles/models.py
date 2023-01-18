@@ -1,11 +1,11 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
 
 
 class Profile(models.Model):
 
     owner = models.OneToOneField(
-        User,
+        settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
     )
     name = models.CharField(
