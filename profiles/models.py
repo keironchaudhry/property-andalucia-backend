@@ -15,6 +15,10 @@ class Profile(models.Model):
     bio = models.TextField(
         blank=True
     )
+    email = models.EmailField(
+        max_length=40,
+        blank=True
+    )
     telephone = models.CharField(
         max_length=20,
         blank=True
