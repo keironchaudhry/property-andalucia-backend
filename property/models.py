@@ -1,6 +1,27 @@
 from django.db import models
 from django.conf import settings
 
+property_type_choices = [
+    ('apartment', 'Apartment'),
+    ('flat', 'Flat'),
+    ('townhouse', 'Townhouse'),
+    ('villa', 'Villa'),
+    ('residential hosuing estate', 'Residential Housing Estate'),
+    ('country property', 'Country Property'),
+    ('bungalow', 'Bungalow'),
+]
+
+province_choices = [
+    ('huelva', 'Huelva'),
+    ('sevilla', 'Sevilla'),
+    ('cadiz', 'Cadiz'),
+    ('cordoba', 'Cordoba'),
+    ('granada', 'Granada'),
+    ('malaga', 'Malaga'),
+    ('jaen', 'Jaen'),
+    ('almeria', 'Almeria'),
+]
+
 
 class Property(models.Model):
     owner = models.ForeignKey(
@@ -14,7 +35,11 @@ class Property(models.Model):
     )
     property_type = models.CharField(
         max_length=30,
-        choices=
+        choices=property_type_choices
+    )
+    province = models.CharField(
+        max_length=20,
+        choices=province_choices
     )
     street = models.CharField(
         max_length=40,
@@ -23,10 +48,6 @@ class Property(models.Model):
     )
     municipality = models.CharField(
         max_length=60
-    )
-    province = models.CharField(
-        max_length=20,
-        choices=
     )
     post_code = models.CharField(
         max_length=5
