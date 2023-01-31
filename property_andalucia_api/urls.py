@@ -29,4 +29,8 @@ urlpatterns = [
         '',
         include('profiles.urls')
     ),
+    path(
+        '',
+        include('property.urls')
+    ),
 ]
