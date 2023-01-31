@@ -7,3 +7,9 @@ class PropertyList(generics.ListAPIView):
     """ Obtains and lists all property objects """
     queryset = Property.objects.all()
     serializer_class = PropertySerializer
+
+
+class PropertyDetail(generics.RetrieveUpdateDestroyAPIView):
+    """ Retrieve, update or destroy a single property object when "owner" """
+    queryset = Property.objects.all()
+    serializer_class = PropertySerializer
