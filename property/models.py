@@ -88,3 +88,9 @@ class Property(models.Model):
     )
     created_at = models.DateTimeField()
     updated_at = models.DateTimeField()
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f'{self.id} {self.name}'
