@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import PropertyListView
+from .views import PropertyList
 
 urlpatterns = [
     path(
