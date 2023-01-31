@@ -75,7 +75,7 @@ class Property(models.Model):
         default='../default_property_gbwuvw',
         blank=True
     )
-    sold = BooleanField(
+    sold = models.BooleanField(
         default=False
     )
     latitude = models.FloatField(
