@@ -1,28 +1,27 @@
 from rest_framework import serializers
-from .models import Profile
+from .models import Note
 
 
-class ProfileSerializer(serializers.ModelSerializer):
+class NoteSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
-    seller_status = serializers.ReadOnlyField(source='owner.seller_status')
+    profile_id = serializers.ReadOnlyField(source='owner.profile.id')
+    profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
 
     def get_is_owner(self, obj):
         request = self.context['request']
         return request.user == obj.owner
 
     class Meta:
-        model = Profile
+        model = Note
         fields = [
             'id',
             'owner',
             'is_owner',
-            'seller_status',
-            'name',
-            'bio',
-            'email',
-            'telephone',
-            'image',
+            'profile_id',
+            'profile_image',
+            'property',
+            'content',
             'created_at',
             'updated_at'
         ]
