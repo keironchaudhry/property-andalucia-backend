@@ -10,7 +10,7 @@ class NoteList(generics.ListAPIView):
     serializer_class = NoteSerializer
 
 
-class NoteDetail(generics.RetrieveUpdateAPIView):
+class NoteDetail(generics.RetrieveUpdateDestroyAPIView):
     """ Retrieve or update a note when "owner" """
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Note.objects.all()
