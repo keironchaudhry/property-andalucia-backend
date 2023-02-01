@@ -4,7 +4,7 @@ from .serializers import NoteSerializer
 from property_andalucia_api.permissions import IsOwnerOrReadOnly
 
 
-class NoteList(generics.ListAPIView):
+class NoteList(generics.ListCreateAPIView):
     """ Obtains and lists all note objects """
     queryset = Note.objects.all()
     serializer_class = NoteSerializer
