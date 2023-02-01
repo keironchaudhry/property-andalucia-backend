@@ -1,3 +1,25 @@
 from django.db import models
+from django.conf import settings
+from property.models import Property
 
-# Create your models here.
+
+class Save(models.Model):
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+    property = models.ForeignKey(
+        Property,
+        related_name='saves',
+        on_delete=models.CASCADE
+    )
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    class Meta:
+        ordering = ['-created_at']
+        unique_together = ['owner', 'property']
+
+    def __str__(self):
+        return f'{self.owner.username, self.property}'
