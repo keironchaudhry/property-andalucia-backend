@@ -37,4 +37,8 @@ urlpatterns = [
         '',
         include('notes.urls')
     ),
+    path(
+        '',
+        include('saves.urls')
+    ),
 ]
