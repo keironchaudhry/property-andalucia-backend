@@ -33,4 +33,8 @@ urlpatterns = [
         '',
         include('property.urls')
     ),
+    path(
+        '',
+        include('notes.urls')
+    ),
 ]
