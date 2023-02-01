@@ -41,4 +41,8 @@ urlpatterns = [
         '',
         include('saves.urls')
     ),
+    path(
+        '',
+        include('followers.urls')
+    ),
 ]
