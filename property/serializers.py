@@ -3,9 +3,9 @@ from .models import Property
 
 
 class PropertySerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source="owner.username")
+    owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
-    profile_id = serializers.ReadOnlyField(source="owner.profile.id")
+    profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     longitude = serializers.ReadOnlyField()
     latitude = serializers.ReadOnlyField()
 
