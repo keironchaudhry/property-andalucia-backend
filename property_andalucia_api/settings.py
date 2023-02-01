@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'property',
     'notes',
     'saves',
+    'followers',
 ]
 
 MIDDLEWARE = [
