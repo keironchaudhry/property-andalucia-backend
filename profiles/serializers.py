@@ -8,6 +8,9 @@ class ProfileSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     seller_status = serializers.ReadOnlyField(source='owner.seller_status')
     following_id = serializers.SerializerMethodField()
+    propertys_count = serializers.ReadOnlyField()
+    followers_count = serializers.ReadOnlyField()
+    following_count = serializers.ReadOnlyField()
 
     def get_is_owner(self, obj):
         request = self.context['request']
@@ -23,7 +26,6 @@ class ProfileSerializer(serializers.ModelSerializer):
             return following.id if following else None
         return None
 
-
     class Meta:
         model = Profile
         fields = [
@@ -32,6 +34,9 @@ class ProfileSerializer(serializers.ModelSerializer):
             'is_owner',
             'seller_status',
             'following_id',
+            'propertys_count',
+            'followers_count',
+            'following_count',
             'name',
             'bio',
             'email',
