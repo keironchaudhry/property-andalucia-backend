@@ -5,7 +5,8 @@ from django.db import models
 class Follower(models.Model):
     owner = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name='following',
     )
     followed = models.ForeignKey(
         settings.AUTH_USER_MODEL,

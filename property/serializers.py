@@ -1,17 +1,29 @@
 from rest_framework import serializers
 from .models import Property
+from saves.models import Save
 
 
 class PropertySerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
+    save_id = serializers.SerializerMethodField()
     longitude = serializers.ReadOnlyField()
     latitude = serializers.ReadOnlyField()
 
     def get_is_owner(self, obj):
         request = self.context['request']
         return request.user == obj.owner
+    
+    def get_save_id(self, obj):
+        user = self.context['request'].user
+        if user.is_authenticated:
+            save = Save.objects.filter(
+                owner=user,
+                property=obj
+            ).first()
+            return save.id if save else None
+        return None
 
     class Meta:
         model = Property
@@ -20,6 +32,7 @@ class PropertySerializer(serializers.ModelSerializer):
             'owner',
             'is_owner',
             'profile_id',
+            'save_id',
             'name',
             'property_type',
             'province',
