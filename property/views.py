@@ -1,12 +1,14 @@
-from .models import Property
-from .serializers import PropertySerializer
 from django.db.models import Count
-from rest_framework import generics
+from rest_framework import generics, filters
+
 from property_andalucia_api.permissions import IsOwnerOrReadOnly, IsSeller
+from .serializers import PropertySerializer
+from .models import Property
 
 
 class PropertyList(generics.ListAPIView):
     """ Obtains and lists all property objects """
+    filter_backends = [filters.OrderingFilter]
     queryset = Property.objects.all()
     serializer_class = PropertySerializer
 
