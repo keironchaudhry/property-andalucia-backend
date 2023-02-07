@@ -1,5 +1,6 @@
 from django.db.models import Count
 from rest_framework import generics, filters
+from django_filters.rest_framework import DjangoFilterBackend
 
 from property_andalucia_api.permissions import IsOwnerOrReadOnly, IsSeller
 from .serializers import PropertySerializer
@@ -8,7 +9,19 @@ from .models import Property
 
 class PropertyList(generics.ListAPIView):
     """ Obtains and lists all property objects """
-    filter_backends = [filters.OrderingFilter]
+    filter_backends = [
+        filters.OrderingFilter,
+        DjangoFilterBackend
+    ]
+    ordering_fields = [
+        'saves_count',
+        'saves__created_at',
+    ]
+    filterset_fields = [
+        'owner__followed__owner__profile',
+        'saves__owner__profile',
+        'owner__profile',
+    ]
     queryset = Property.objects.all()
     serializer_class = PropertySerializer
 
