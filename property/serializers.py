@@ -7,6 +7,13 @@ class PropertySerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
+    profile_email = serializers.ReadOnlyField(
+        source='owner.profile.email'
+    )
+    profile_telephone = serializers.ReadOnlyField(
+        source='owner.profile.telephone'
+    )
+    profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     save_id = serializers.SerializerMethodField()
     saves_count = serializers.ReadOnlyField()
 
@@ -31,6 +38,9 @@ class PropertySerializer(serializers.ModelSerializer):
             'owner',
             'is_owner',
             'profile_id',
+            'profile_email',
+            'profile_telephone',
+            'profile_image',
             'save_id',
             'saves_count',
             'name',
