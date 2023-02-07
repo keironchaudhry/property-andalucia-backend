@@ -8,13 +8,12 @@ class PropertySerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     save_id = serializers.SerializerMethodField()
-    longitude = serializers.ReadOnlyField()
-    latitude = serializers.ReadOnlyField()
+    saves_count = serializers.ReadOnlyField()
 
     def get_is_owner(self, obj):
         request = self.context['request']
         return request.user == obj.owner
-    
+
     def get_save_id(self, obj):
         user = self.context['request'].user
         if user.is_authenticated:
@@ -33,6 +32,7 @@ class PropertySerializer(serializers.ModelSerializer):
             'is_owner',
             'profile_id',
             'save_id',
+            'saves_count',
             'name',
             'property_type',
             'province',

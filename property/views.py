@@ -1,5 +1,6 @@
 from .models import Property
 from .serializers import PropertySerializer
+from django.db.models import Count
 from rest_framework import generics
 from property_andalucia_api.permissions import IsOwnerOrReadOnly, IsSeller
 
@@ -22,6 +23,8 @@ class PropertyCreate(generics.CreateAPIView):
 
 class PropertyDetail(generics.RetrieveUpdateDestroyAPIView):
     """ Retrieve, update or destroy a single property object when "owner" """
-    queryset = Property.objects.all()
+    queryset = Property.objects.annotate(
+        saves_count=Count('saves', distinct=True),
+    ).order_by('-created_at')
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = PropertySerializer
