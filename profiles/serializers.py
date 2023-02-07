@@ -1,5 +1,7 @@
 from rest_framework import serializers
+
 from .models import Profile
+from property_andalucia_api.validators import validate_image
 from followers.models import Follower
 
 
@@ -25,6 +27,10 @@ class ProfileSerializer(serializers.ModelSerializer):
             ).first()
             return following.id if following else None
         return None
+
+    def validate_image(self, value):
+        valid_image = validate_image(value)
+        return valid_image
 
     class Meta:
         model = Profile
