@@ -21,6 +21,14 @@ class PropertyList(generics.ListAPIView):
         'owner__followed__owner__profile',
         'saves__owner__profile',
         'owner__profile',
+        'province',
+        'price',
+        'bedroom_count',
+        'bathrooms_count',
+        'garage',
+        'garden',
+        'is_south_facing',
+        'sold',
     ]
     queryset = Property.objects.all()
     serializer_class = PropertySerializer
