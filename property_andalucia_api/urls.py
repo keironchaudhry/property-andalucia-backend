@@ -26,6 +26,10 @@ urlpatterns = [
         include('rest_framework.urls')
     ),
     path(
+        'dj-rest-auth/',
+        include('dj_rest_auth.urls')
+    ),
+    path(
         '',
         include('profiles.urls')
     ),
