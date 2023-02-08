@@ -1,6 +1,13 @@
 import re
 
 from rest_framework import serializers
+from django.core.validators import RegexValidator
+
+validate_numbers = RegexValidator(
+    (
+        '^\\d+$'
+    )
+)
 
 
 def validate_telephone_number(value):
