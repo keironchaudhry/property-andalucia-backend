@@ -1,13 +1,20 @@
 import re
 
-from django.core.validators import RegexValidator
 from rest_framework import serializers
 
-validate_numbers = RegexValidator(
-    (
-        '^\\d+$'
+
+def validate_telephone_number(value):
+    # https://www.sololearn.com/discuss/2588446/solved-python-phone-number-validator
+    # Above link aided me in the creation of this particular function.
+    # Allows only 9 numeric digits as a Spanish telephone number.
+    regex = re.compile(
+        r'^[697][0-9]{8}$'
     )
-)
+    if re.fullmatch(regex, value):
+        return value
+    raise serializers.ValidationError(
+        'Please enter a valid Spanish number (9-digits).'
+    )
 
 
 def validate_image(value):

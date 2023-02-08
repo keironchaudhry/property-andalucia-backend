@@ -4,6 +4,7 @@ from .models import Profile
 from property_andalucia_api.validators import (
     validate_image,
     validate_email_address,
+    validate_telephone_number,
 )
 from followers.models import Follower
 
@@ -38,6 +39,10 @@ class ProfileSerializer(serializers.ModelSerializer):
     def validate_email(self, value):
         valid_email = validate_email_address(value)
         return valid_email
+
+    def validate_telephone(self, value):
+        valid_telephone_number = validate_telephone_number(value)
+        return valid_telephone_number
 
     class Meta:
         model = Profile
