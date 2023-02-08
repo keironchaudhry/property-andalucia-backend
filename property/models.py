@@ -1,6 +1,8 @@
 from django.db import models
 from django.conf import settings
 
+from property_andalucia_api.validators import validate_numbers
+
 property_type_choices = [
     ('apartment', 'Apartment'),
     ('flat', 'Flat'),
@@ -50,7 +52,8 @@ class Property(models.Model):
         max_length=60
     )
     post_code = models.CharField(
-        max_length=5
+        max_length=5,
+        validators=[validate_numbers]
     )
     price = models.PositiveIntegerField()
     size = models.PositiveIntegerField()

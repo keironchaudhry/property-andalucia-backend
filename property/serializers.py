@@ -1,5 +1,7 @@
 from rest_framework import serializers
+
 from .models import Property
+from property_andalucia_api.validators import validate_image
 from saves.models import Save
 
 
@@ -30,6 +32,10 @@ class PropertySerializer(serializers.ModelSerializer):
             ).first()
             return save.id if save else None
         return None
+
+    def validate_image(self, value):
+        valid_image = validate_image(value)
+        return valid_image
 
     class Meta:
         model = Property
