@@ -1,4 +1,6 @@
 from rest_framework import generics, permissions
+from django_filters.rest_framework import DjangoFilterBackend
+
 from .models import Note
 from .serializers import NoteSerializer
 from property_andalucia_api.mixins import CustomQuerysetFilter
@@ -10,6 +12,8 @@ class NoteList(CustomQuerysetFilter, generics.ListCreateAPIView):
     model = Note
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = NoteSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['property']
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
