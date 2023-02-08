@@ -1,3 +1,5 @@
+import re
+
 from django.core.validators import RegexValidator
 from rest_framework import serializers
 
@@ -28,3 +30,17 @@ def validate_image(value):
             'Image width must be smaller than 4096px.'
         )
     return value
+
+
+def validate_email_address(value):
+    # https://stackabuse.com/python-validate-email-address-with-regular-expressions-regex/
+    # Credit: The above link helped me understand
+    # how to create the logic for this function
+    regex = re.compile(
+        r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+'
+    )
+    if re.fullmatch(regex, value):
+        return value
+    raise serializers.ValidationError(
+        'Please enter a valid email address.'
+    )
