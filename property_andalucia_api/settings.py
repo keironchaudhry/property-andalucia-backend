@@ -57,6 +57,12 @@ REST_AUTH_SERIALIZERS = {
     )
 }
 
+REST_AUTH_REGISTER_SERIALIZERS = {
+    'REGISTER_SERIALIZER': (
+        'users.serializers.SellerStatusSerializer'
+    )
+}
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
