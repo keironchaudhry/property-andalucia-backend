@@ -7,11 +7,11 @@ urlpatterns = [
         PropertyList.as_view()
     ),
     path(
-        'property/create',
+        'property/create/',
         PropertyCreate.as_view()
     ),
     path(
-        'property/<int:pk>',
+        'property/<int:pk>/',
         PropertyDetail.as_view()
     ),
 ]
