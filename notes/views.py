@@ -2,7 +2,7 @@ from rest_framework import generics, permissions
 from django_filters.rest_framework import DjangoFilterBackend
 
 from .models import Note
-from .serializers import NoteSerializer
+from .serializers import NoteSerializer, NoteDetailSerializer
 from property_andalucia_api.mixins import CustomQuerysetFilter
 from property_andalucia_api.permissions import IsOwnerOrReadOnly
 
@@ -23,4 +23,4 @@ class NoteDetail(CustomQuerysetFilter, generics.RetrieveUpdateDestroyAPIView):
     """ Retrieve or update a note when "owner" """
     model = Note
     permission_classes = [IsOwnerOrReadOnly]
-    serializer_class = NoteSerializer
+    serializer_class = NoteDetailSerializer
