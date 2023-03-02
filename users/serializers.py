@@ -22,19 +22,3 @@ class SellerStatusSerializer(RegisterSerializer):
         )
         user.save()
         return user
-
-
-class SellerStatusSerializerDetail(serializers.ModelSerializer):
-
-    class Meta:
-        model = UpdatedUser
-        fields = (
-            'pk',
-            'username',
-            'email',
-            'seller_status',
-            'is_staff',
-            'is_active',
-            'is_superuser',
-            'date_joined',
-        )
