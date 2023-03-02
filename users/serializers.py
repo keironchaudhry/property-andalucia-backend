@@ -1,6 +1,7 @@
 from dj_rest_auth.registration.serializers import RegisterSerializer
 from rest_framework import serializers
 from django.db import transaction
+from .models import UpdatedUser
 
 # https://www.rootstrap.com/blog/registration-and-authentication-in-django-apps-with-dj-rest-auth
 # Above link was a great tutorial on how
@@ -21,3 +22,19 @@ class SellerStatusSerializer(RegisterSerializer):
         )
         user.save()
         return user
+
+
+class SellerStatusSerializerDetail(serializers.ModelSerializer):
+
+    class Meta:
+        model = UpdatedUser
+        fields = (
+            'pk',
+            'username',
+            'email',
+            'seller_status',
+            'is_staff',
+            'is_active',
+            'is_superuser',
+            'date_joined',
+        )
