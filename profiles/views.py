@@ -6,12 +6,16 @@ from property_andalucia_api.permissions import IsOwnerOrReadOnly
 
 
 class ProfileList(generics.ListAPIView):
-    """ Obtains and lists all profile objects """
-    queryset = Profile.objects.annotate(
-        propertys_count=Count('owner__property', distinct=True),
-        followers_count=Count('owner__followed', distinct=True),
-        following_count=Count('owner__following', distinct=True)
-    ).order_by('-created_at')
+    """ Obtains and lists all seller profile objects """
+    queryset = (
+        Profile.objects.all()
+        .filter(owner__seller_status=True)
+        .annotate(
+            propertys_count=Count('owner__property', distinct=True),
+            followers_count=Count('owner__followed', distinct=True),
+            following_count=Count('owner__following', distinct=True)
+        ).order_by('-created_at')
+    )
     serializer_class = ProfileSerializer
     filter_backends = [
         filters.OrderingFilter
