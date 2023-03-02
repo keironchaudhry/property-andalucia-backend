@@ -55,9 +55,6 @@ REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': (
         'property_andalucia_api.serializers.CurrentUserSerializer'
     ),
-    'USER_DETAILS_SERIALIZER': (
-        'users.serializers.SellerStatusSerializerDetail'
-    ),
 }
 
 REST_AUTH_REGISTER_SERIALIZERS = {
