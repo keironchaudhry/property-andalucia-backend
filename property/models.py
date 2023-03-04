@@ -3,29 +3,30 @@ from django.conf import settings
 
 from property_andalucia_api.validators import validate_numbers
 
-property_type_choices = [
-    ('apartment', 'Apartment'),
-    ('flat', 'Flat'),
-    ('townhouse', 'Townhouse'),
-    ('villa', 'Villa'),
-    ('residential hosuing estate', 'Residential Housing Estate'),
-    ('country property', 'Country Property'),
-    ('bungalow', 'Bungalow'),
-]
-
-province_choices = [
-    ('huelva', 'Huelva'),
-    ('sevilla', 'Sevilla'),
-    ('cadiz', 'Cadiz'),
-    ('cordoba', 'Cordoba'),
-    ('granada', 'Granada'),
-    ('malaga', 'Malaga'),
-    ('jaen', 'Jaen'),
-    ('almeria', 'Almeria'),
-]
-
 
 class Property(models.Model):
+
+    property_type_choices = [
+        ('apartment', 'Apartment'),
+        ('flat', 'Flat'),
+        ('townhouse', 'Townhouse'),
+        ('villa', 'Villa'),
+        ('residential hosuing estate', 'Residential Housing Estate'),
+        ('country property', 'Country Property'),
+        ('bungalow', 'Bungalow'),
+    ]
+
+    province_choices = [
+        ('huelva', 'Huelva'),
+        ('sevilla', 'Sevilla'),
+        ('cadiz', 'Cadiz'),
+        ('cordoba', 'Cordoba'),
+        ('granada', 'Granada'),
+        ('malaga', 'Malaga'),
+        ('jaen', 'Jaen'),
+        ('almeria', 'Almeria'),
+    ]
+
     owner = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
