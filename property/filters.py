@@ -4,6 +4,12 @@ from .models import Property
 
 
 class CustomFilters(filters.FilterSet):
+    property_type = filters.ChoiceFilter(
+        choices=Property.property_type_choices
+    )
+    province = filters.ChoiceFilter(
+        choices=Property.province_choices
+    )
     price = filters.RangeFilter(
         field_name='price'
     )
@@ -32,6 +38,8 @@ class CustomFilters(filters.FilterSet):
             'owner__followed__owner__profile',
             'saves__owner__profile',
             'owner__profile',
+            'property_type',
+            'province',
             'price',
             'bedroom_count',
             'bathrooms_count',
