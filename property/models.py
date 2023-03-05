@@ -11,7 +11,7 @@ class Property(models.Model):
         ('flat', 'Flat'),
         ('townhouse', 'Townhouse'),
         ('villa', 'Villa'),
-        ('residential hosuing estate', 'Residential Housing Estate'),
+        ('residential housing estate', 'Residential Housing Estate'),
         ('country property', 'Country Property'),
         ('bungalow', 'Bungalow'),
     ]
