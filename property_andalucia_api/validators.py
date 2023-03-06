@@ -20,7 +20,7 @@ def validate_telephone_number(value):
     if re.fullmatch(regex, value):
         return value
     raise serializers.ValidationError(
-        'Please enter a valid Spanish number (9-digits).'
+        'Enter a valid Spanish number (9-digits, starting with 6, 7 or 9).'
     )
 
 
