@@ -3,8 +3,14 @@ from django.conf import settings
 from django.db.models.signals import post_save
 
 
-class Profile(models.Model):
+""" Code adapted from Code Institute's "Django REST" walkthrough. """
 
+
+class Profile(models.Model):
+    """
+    Profile model which allows for users
+    to create a user profile and store data.
+    """
     owner = models.OneToOneField(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE

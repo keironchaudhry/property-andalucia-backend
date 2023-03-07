@@ -1,8 +1,14 @@
 from django.conf import settings
 from django.db import models
 
+""" Code adapted from Code Institute's "Django REST" walkthrough. """
+
 
 class Follower(models.Model):
+    """
+    Follower model which allows for users
+    to follow/unfollow other app users.
+    """
     owner = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,

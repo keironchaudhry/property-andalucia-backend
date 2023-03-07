@@ -11,6 +11,8 @@ from .serializers import PropertySerializer
 from .filters import CustomFilters
 from .models import Property
 
+""" Code adapted from Code Institute's "Django REST" walkthrough. """
+
 
 class PropertyList(generics.ListAPIView):
     """ Obtains and lists all property objects """

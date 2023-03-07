@@ -15,6 +15,8 @@ import re
 import os
 import dj_database_url
 
+""" Code adapted from Code Institute's "Django REST" walkthrough. """
+
 if os.path.exists('env.py'):
     import env
 

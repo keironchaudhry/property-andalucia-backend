@@ -6,6 +6,8 @@ from .serializers import NoteSerializer, NoteDetailSerializer
 from property_andalucia_api.mixins import CustomQuerysetFilter
 from property_andalucia_api.permissions import IsOwnerOrReadOnly
 
+""" Code adapted from Code Institute's "Django REST" walkthrough. """
+
 
 class NoteList(CustomQuerysetFilter, generics.ListCreateAPIView):
     """ Obtains and lists all note objects """

@@ -2,6 +2,8 @@ from django.contrib.humanize.templatetags.humanize import naturaltime
 from rest_framework import serializers
 from .models import Note
 
+""" Code adapted from Code Institute's "Django REST" walkthrough. """
+
 
 class NoteSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')

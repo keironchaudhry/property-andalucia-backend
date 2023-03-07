@@ -4,6 +4,8 @@ from .models import Property
 from property_andalucia_api.validators import validate_image
 from saves.models import Save
 
+""" Code adapted from Code Institute's "Django REST" walkthrough. """
+
 
 class PropertySerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
