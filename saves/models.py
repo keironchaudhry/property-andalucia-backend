@@ -2,8 +2,14 @@ from django.db import models
 from django.conf import settings
 from property.models import Property
 
+""" Code adapted from Code Institute's "Django REST" walkthrough. """
+
 
 class Save(models.Model):
+    """
+    Save model which allows for users
+    to save/unsave other user property objects.
+    """
     owner = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE

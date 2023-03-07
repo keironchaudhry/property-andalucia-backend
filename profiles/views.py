@@ -4,6 +4,8 @@ from .models import Profile
 from .serializers import ProfileSerializer
 from property_andalucia_api.permissions import IsOwnerOrReadOnly
 
+""" Code adapted from Code Institute's "Django REST" walkthrough. """
+
 
 class ProfileList(generics.ListAPIView):
     """ Obtains and lists all seller profile objects """

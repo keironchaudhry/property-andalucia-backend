@@ -2,6 +2,8 @@ from django.db import IntegrityError
 from rest_framework import serializers
 from .models import Save
 
+""" Code adapted from Code Institute's "Django REST" walkthrough. """
+
 
 class SaveSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')

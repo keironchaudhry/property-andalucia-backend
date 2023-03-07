@@ -8,6 +8,8 @@ from property_andalucia_api.validators import (
 )
 from followers.models import Follower
 
+""" Code adapted from Code Institute's "Django REST" walkthrough. """
+
 
 class ProfileSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')

@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from .models import Follower
 
+""" Code adapted from Code Institute's "Django REST" walkthrough. """
+
 
 class FollowerSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')

@@ -5,6 +5,10 @@ from property_andalucia_api.validators import validate_numbers
 
 
 class Property(models.Model):
+    """
+    Property model which allows for users
+    to create a property object and store data.
+    """
 
     property_type_choices = [
         ('apartment', 'Apartment'),

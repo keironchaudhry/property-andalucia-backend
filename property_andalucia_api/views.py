@@ -7,6 +7,8 @@ from .settings import (
     JWT_AUTH_SECURE,
 )
 
+""" Code adapted from Code Institute's "Django REST" walkthrough. """
+
 
 @api_view()
 def root_route(request):
