@@ -162,7 +162,7 @@ WSGI_APPLICATION = 'property_andalucia_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if 'test' in sys.argv or 'test_coverage' or 'DEV' in os.environ:
+if 'DEV' in os.environ:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
