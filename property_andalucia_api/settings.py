@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import re
 import os
+import sys
 import dj_database_url
 
 """ Code adapted from Code Institute's "Django REST" walkthrough. """
@@ -161,7 +162,7 @@ WSGI_APPLICATION = 'property_andalucia_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if 'DEV' in os.environ:
+if 'test' in sys.argv or 'test_coverage' or 'DEV' in os.environ:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
