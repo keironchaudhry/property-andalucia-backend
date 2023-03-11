@@ -33,7 +33,9 @@ Frontend Repository can be found [here](https://github.com/keironchaudhry/proper
 
 # **User Stories**
 
-Tasks developed for the creation of the project API were made as issues and linked to the projects Kanban board which can be accessed [here](https://github.com/users/keironchaudhry/projects/9/views/1).
+User Stories for the Frontend project can be found [here](https://github.com/keironchaudhry/property-andalucia-frontend/issues?q=is%3Aissue+is%3Aclosed). In coordination with these stories, tasks were developed to carry out the API work needed to support and sustain the principal user stories.
+
+Therefore the tasks developed for the creation of the project API were made as issues and linked to the projects Kanban board which can be accessed [here](https://github.com/keironchaudhry/property-andalucia-backend/issues?q=is%3Aissue+is%3Aclosed).
 
 # **Database**
 
