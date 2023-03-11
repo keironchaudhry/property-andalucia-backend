@@ -17,6 +17,8 @@ Frontend Repository can be found [here](https://github.com/keironchaudhry/proper
 * [Database](#database)
 * [Testing](#testing)
 * [Bugs](#bugs)
+    * [fixed-bugs](#fixed-bugs)
+    * [remaining-bugs](#remaining-bugs)
 * [Technologies and libraries used](#technologies-and-libraries-used)
     * [Languages](#languages)
     * [Database Platform and Cloud Storage](#database-platform-and-cloud-storage)
@@ -89,7 +91,13 @@ To be added.
 
 # **Bugs**
 
+## **Fixed bugs**
+
 All bugs encountered and fixed during the development process can be found [here](https://github.com/keironchaudhry/property-andalucia-backend/pulls?q=is%3Apr+label%3Abug+is%3Aclosed).
+
+## **Remaining bugs**
+
+There are currently no known bugs.
 
 # **Technologies and libraries used**
 
