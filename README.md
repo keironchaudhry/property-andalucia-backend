@@ -16,6 +16,7 @@ Frontend Repository can be found [here](https://github.com/keironchaudhry/proper
 * [User Stories](#user-stories)
 * [Database](#database)
 * [Testing](#testing)
+* [Bugs](#bugs)
 * [Technologies and libraries used](#technologies-and-libraries-used)
     * [Languages](#languages)
     * [Database Platform and Cloud Storage](#database-platform-and-cloud-storage)
@@ -85,6 +86,10 @@ Tasks developed for the creation of the project API were made as issues and link
 # **Testing**
 
 To be added.
+
+# **Bugs**
+
+All bugs encountered and fixed during the development process can be found [here](https://github.com/keironchaudhry/property-andalucia-backend/pulls?q=is%3Apr+label%3Abug+is%3Aclosed).
 
 # **Technologies and libraries used**
 
