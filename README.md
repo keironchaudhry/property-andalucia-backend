@@ -16,6 +16,9 @@ Frontend Repository can be found [here](https://github.com/keironchaudhry/proper
 * [User Stories](#user-stories)
 * [Database](#database)
 * [Testing](#testing)
+* [Bugs](#bugs)
+    * [fixed-bugs](#fixed-bugs)
+    * [remaining-bugs](#remaining-bugs)
 * [Technologies and libraries used](#technologies-and-libraries-used)
     * [Languages](#languages)
     * [Database Platform and Cloud Storage](#database-platform-and-cloud-storage)
@@ -30,7 +33,9 @@ Frontend Repository can be found [here](https://github.com/keironchaudhry/proper
 
 # **User Stories**
 
-Tasks developed for the creation of the project API were made as issues and linked to the projects Kanban board which can be accessed [here](https://github.com/users/keironchaudhry/projects/9/views/1).
+User Stories for the Frontend project can be found [here](https://github.com/keironchaudhry/property-andalucia-frontend/issues?q=is%3Aissue+is%3Aclosed). In coordination with these stories, tasks were developed to carry out the API work needed to support and sustain the principal user stories.
+
+Therefore the tasks developed for the creation of the project API were made as issues and linked to the projects Kanban board which can be accessed [here](https://github.com/keironchaudhry/property-andalucia-backend/issues?q=is%3Aissue+is%3Aclosed).
 
 # **Database**
 
@@ -84,7 +89,17 @@ Tasks developed for the creation of the project API were made as issues and link
 
 # **Testing**
 
-To be added.
+Separate documentation for testing can be found [here](/documents/testing.md).
+
+# **Bugs**
+
+## **Fixed bugs**
+
+All bugs encountered and fixed during the development process can be found [here](https://github.com/keironchaudhry/property-andalucia-backend/pulls?q=is%3Apr+label%3Abug+is%3Aclosed).
+
+## **Remaining bugs**
+
+There are currently no known bugs.
 
 # **Technologies and libraries used**
 
