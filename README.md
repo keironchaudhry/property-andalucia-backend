@@ -89,7 +89,7 @@ Therefore the tasks developed for the creation of the project API were made as i
 
 # **Testing**
 
-To be added.
+Separate documentation for testing can be found [here](/documents/testing.md).
 
 # **Bugs**
 

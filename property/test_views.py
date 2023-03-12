@@ -4,6 +4,8 @@ from rest_framework import status
 from django.contrib.auth import get_user_model
 from rest_framework.test import APITestCase
 
+""" First few tests are adapted from Code Institute's "Django REST" module """
+
 
 class PropertyListViewTests(APITestCase):
     def setUp(self):
