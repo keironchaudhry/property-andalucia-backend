@@ -6,7 +6,7 @@ This repository contains the API part of the project, created using Python and t
 
 API Deployment can be found [here](https://property-andalucia-backend.herokuapp.com/).
 
-Frontend Deployment can be found [here]().
+Frontend Deployment can be found [here](https://property-andalucia-frontend.herokuapp.com/).
 
 Frontend Repository can be found [here](https://github.com/keironchaudhry/property-andalucia-frontend).
 
@@ -96,6 +96,8 @@ Separate documentation for testing can be found [here](/documents/testing.md).
 ## **Fixed bugs**
 
 All bugs encountered and fixed during the development process can be found [here](https://github.com/keironchaudhry/property-andalucia-backend/pulls?q=is%3Apr+label%3Abug+is%3Aclosed).
+
+Bugs across the entire Property Andalucia were generally from the API section portion of the subject, such as improper data field implementation that needed correcting or irregular permissions. These sort of errors impeded data requests and as such drew the attention of these irregularities.
 
 ## **Remaining bugs**
 

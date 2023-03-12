@@ -54,7 +54,7 @@ Automated tests were created for the Property app to demonstrate automated testi
 | App | Action | Authenticated | Anonymous | Passed |
 | --- | --- | --- | --- | --- |
 | Saves | Read (Listed Objects) | Returns an empty array | Returns an empty array | &check; |
-| Saves | Read (Object Owner + :id) | Returns detailed saves object | 404 Response
+| Saves | Read (Object Owner + :id) | Returns detailed saves object | 404 Response | &check; |
 | Saves | Read (Not Object Owner + :id) | 404 Response | 404 Response | &check; |
 | Saves | Read (Invalid :id) | 404 Response | 404 Response | &check; |
 | Saves | Create | 201 Response | Access unavailable | &check; |
