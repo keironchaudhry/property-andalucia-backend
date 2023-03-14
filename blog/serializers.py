@@ -25,7 +25,7 @@ class BlogSerializer(serializers.ModelSerializer):
         return naturaltime(obj.updated_at)
 
     class Meta:
-        model = Blog()
+        model = Blog
         fields = [
             'id',
             'owner',
@@ -33,7 +33,7 @@ class BlogSerializer(serializers.ModelSerializer):
             'title',
             'content',
             'image',
-            'created_on',
+            'created_at',
             'updated_at',
             'profile_id',
             'profile_image',
