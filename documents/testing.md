@@ -53,7 +53,7 @@ Automated tests were created for the Property app to demonstrate automated testi
 
 | App | Action | Authenticated | Anonymous | Passed |
 | --- | --- | --- | --- | --- |
-| Saves | Read (Listed Objects) | Returns an empty array | Returns an empty array | &check; |
+| Saves | Read (Listed Objects) | Returns array of user-owned saves objects | Returns an empty array | &check; |
 | Saves | Read (Object Owner + :id) | Returns detailed saves object | 404 Response | &check; |
 | Saves | Read (Not Object Owner + :id) | 404 Response | 404 Response | &check; |
 | Saves | Read (Invalid :id) | 404 Response | 404 Response | &check; |
@@ -77,7 +77,7 @@ Automated tests were created for the Property app to demonstrate automated testi
 
 | App | Action | Authenticated | Anonymous | Passed |
 | --- | --- | --- | --- | --- |
-| Notes | Read (Listed Objects) | Returns array of owned notes objects | Returns an empty array | &check; |
+| Notes | Read (Listed Objects) | Returns array of user-owned notes objects | Returns an empty array | &check; |
 | Notes | Read (Object Owner + :id) | Returns detailed notes object | 404 Response | &check; |
 | Notes | Read (Not Object Owner + :id) | 404 Response | 404 Response | &check; |
 | Notes | Read (Invalid :id) | 404 Response | 404 Response | &check; |
