@@ -3,7 +3,7 @@ from rest_framework import generics
 from .models import Blog
 from .serializers import BlogSerializer
 from property_andalucia_api.permissions import (
-    IsSeller,
+    IsStaff,
     IsOwnerOrReadOnly
 )
 
@@ -15,7 +15,7 @@ class BlogListView(generics.ListAPIView):
 
 class BlogCreateView(generics.CreateAPIView):
     serializer_class = BlogSerializer
-    permission_classes = [IsSeller]
+    permission_classes = [IsStaff]
     queryset = Blog.objects.all()
 
     def perform_create(self, serializer):
