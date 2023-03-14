@@ -4,6 +4,7 @@ from .models import Blog
 from .serializers import BlogSerializer
 from property_andalucia_api.permissions import (
     IsSeller,
+    IsOwnerOrReadOnly
 )
 
 
@@ -23,4 +24,5 @@ class BlogCreateView(generics.CreateAPIView):
 
 class BlogDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = BlogSerializer
+    permission_classes = [IsOwnerOrReadOnly]
     queryset = Blog.objects.all()
