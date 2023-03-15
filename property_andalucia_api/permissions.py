@@ -15,12 +15,24 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
 # Learned further about custom permission classes from link below
 # https://testdriven.io/blog/custom-permission-classes-drf/
 class IsSeller(permissions.BasePermission):
-    """ Returns False is user is anonymous and returns
-    True if user is an authenticated seller or staff """
+    """ Returns false if user is anonymous, true if seller """
     def has_permission(self, request, view):
         if request.user.is_anonymous:
             return False
-        elif request.user.seller_status or request.user.is_staff:
+        elif request.user.seller_status:
+            return True
+        return False
+
+    def has_object_permission(self, request, view, obj):
+        return obj.owner == request.user
+
+
+class IsStaff(permissions.BasePermission):
+    """ Returns false if user is anonymous, true if staff """
+    def has_permission(self, request, view):
+        if request.user.is_anonymous:
+            return False
+        elif request.user.is_staff:
             return True
         return False
 

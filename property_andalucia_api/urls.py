@@ -62,4 +62,8 @@ urlpatterns = [
         '',
         include('followers.urls')
     ),
+    path(
+        '',
+        include('blog.urls')
+    ),
 ]
