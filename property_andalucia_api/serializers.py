@@ -14,4 +14,5 @@ class CurrentUserSerializer(UserDetailsSerializer):
             'profile_id',
             'profile_image',
             'seller_status',
+            'is_staff',
         )
