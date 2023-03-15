@@ -1,4 +1,4 @@
-from rest_framework import generics
+from rest_framework import generics, filters
 
 from .models import Blog
 from .serializers import BlogSerializer
@@ -11,6 +11,15 @@ from property_andalucia_api.permissions import (
 class BlogListView(generics.ListAPIView):
     serializer_class = BlogSerializer
     queryset = Blog.objects.all()
+
+    filter_backends = [
+        filters.SearchFilter,
+    ]
+
+    search_fields = [
+        'owner__username',
+        'title',
+    ]
 
 
 class BlogCreateView(generics.CreateAPIView):
