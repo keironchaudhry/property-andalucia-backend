@@ -19,7 +19,7 @@ class IsSeller(permissions.BasePermission):
     def has_permission(self, request, view):
         if request.user.is_anonymous:
             return False
-        elif request.user.seller_status or request.user.is_staff:
+        elif request.user.seller_status:
             return True
         return False
 
