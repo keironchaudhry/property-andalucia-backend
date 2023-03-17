@@ -11,6 +11,7 @@
         * [Notes App](#notes-app)
         * [Profiles App](#profiles-app)
         * [Property App](#property-app)
+        * [Blog App](#blog-app)
 * [Code Validation](#code-validation)
 
 
@@ -37,6 +38,9 @@ Automated tests were created for the Property app to demonstrate automated testi
 | /property/ | &check; |
 | /property/:id/ | &check; |
 | /property/create/ | &check; |
+| /blog/ | &check; |
+| /blog/:id/ | &check; |
+| /blog/create/ | &check; |
 | /profiles/ | &check; |
 | /profiles/:id/ | &check; |
 | /notes/ | &check; |
@@ -104,6 +108,16 @@ Automated tests were created for the Property app to demonstrate automated testi
 | Property | Create | 201 Response | Access unavailable | &check; |
 | Property | Update | 200 Response | Access unavailable | &check; |
 | Property | Delete | 204 Response | Access unavailable | &check; |
+
+### **Blog App**
+
+| App | Action | Authenticated | Anonymous | Passed |
+| --- | --- | --- | --- | --- |
+| Blog | Read (Listed Objects) | Returns array of blog objects | Returns array of blog objects | &check; |
+| Blog | Read (Detail) | Returns detailed blog object | Returns detailed blog object | &check; |
+| Blog | Create | 201 Response | Access unavailable | &check; |
+| Blog | Update | 200 Response | Access unavailable | &check; |
+| Blog | Delete | 204 Response | Access unavailable | &check; |
 
 <hr>
 
