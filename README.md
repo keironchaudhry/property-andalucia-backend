@@ -43,7 +43,7 @@ Therefore the tasks developed for the creation of the project API were made as i
 
 * The following diagram represents the relational database model design for this web application. It was made using Quick Database Diagrams:
 
-![database-diagram](/documents/images/updated%20database%20diagram%20.png)
+![database-diagram](/documents/images/updated%20database%20diagram.png)
 
 * **User**
     * The User model contains information about each user that registers an account
@@ -86,6 +86,12 @@ Therefore the tasks developed for the creation of the project API were made as i
     * A relational link is created between the property id, the owner, the save id and the note id.
     * Contains the following fields: *property_id*, *owner*, *property_type*, *province*, *street*, *municipality*, *post_code*, *price*, *size*, *bedroom_count*, *bathrooms_count*, *garage*, *garden*, *is_south_facing*, *description*, *image*, *sold*, *latitude*, *longitude*,*created_at*, *updated_at*.
 
+* **Blog** 
+    * The Blog model is used to store data pertaining to any blog object created by an authenticated user.
+    * A blog object is intended only to be created by users who are staff (i.e. those whose `is_staff` field is set to `True`).
+    * A relational link is formed between the blog id and the owner.
+    * Contains the following fields: *blog_id*, *owner*, *title*, *content*, *image*, *created_at*, *updated_at*.
+    * Blog objects are ordered by `created_at` field.
 
 # **Testing**
 
@@ -213,9 +219,9 @@ The following websites proved to be both insightful and helpful during developme
 
 For inspiration, guidance and inputs, thank you to:
 
-* Sandeep Aggarwal
+* Spencer Barriball
 
-    Absolutely fantastic mentor at Code Institute with brilliant insight into Full Stack Software Development and programmatic skills.
+    Absolutely fantastic mentor at Code Institute with brilliant insight into Full Stack Software Development using React.js and Django.
     
 * Jack Crymble
 
