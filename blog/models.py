@@ -1,6 +1,8 @@
 from django.db import models
 from django.conf import settings
 
+""" Code adapted from Code Institute's "Django REST" walkthrough. """
+
 
 class Blog(models.Model):
     """ Database model for Blog feature """

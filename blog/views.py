@@ -7,6 +7,8 @@ from property_andalucia_api.permissions import (
     IsOwnerOrReadOnly
 )
 
+""" Code adapted from Code Institute's "Django REST" walkthrough. """
+
 
 class BlogListView(generics.ListAPIView):
     serializer_class = BlogSerializer

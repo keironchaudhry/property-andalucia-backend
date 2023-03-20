@@ -3,6 +3,8 @@ from rest_framework import serializers
 from .models import Blog
 from property_andalucia_api.validators import validate_image
 
+""" Code adapted from Code Institute's "Django REST" walkthrough. """
+
 
 class BlogSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
