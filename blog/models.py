@@ -1,6 +1,8 @@
 from django.db import models
 from django.conf import settings
 
+""" Code adapted from Code Institute's "Django REST" walkthrough. """
+
 
 class Blog(models.Model):
     """ Database model for Blog feature """
@@ -17,7 +19,8 @@ class Blog(models.Model):
     )
     image = models.ImageField(
         upload_to='images/',
-        default='../default_property_gbwuvw'
+        default='../default_property_gbwuvw',
+        blank=True
     )
     created_at = models.DateTimeField(
         auto_now_add=True
