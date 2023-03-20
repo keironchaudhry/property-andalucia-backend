@@ -19,7 +19,8 @@ class Blog(models.Model):
     )
     image = models.ImageField(
         upload_to='images/',
-        default='../default_property_gbwuvw'
+        default='../default_property_gbwuvw',
+        blank=True
     )
     created_at = models.DateTimeField(
         auto_now_add=True
