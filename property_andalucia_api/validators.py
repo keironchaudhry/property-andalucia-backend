@@ -58,3 +58,11 @@ def validate_email_address(value):
     raise serializers.ValidationError(
         'Please enter a valid email address.'
     )
+
+
+def validate_empty_field(value):
+    if value == '':
+        raise serializers.ValidationError(
+            'This field cannot be left empty.'
+        )
+    return value

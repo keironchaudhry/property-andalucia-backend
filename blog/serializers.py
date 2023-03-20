@@ -1,7 +1,10 @@
 from rest_framework import serializers
 
 from .models import Blog
-from property_andalucia_api.validators import validate_image
+from property_andalucia_api.validators import (
+    validate_image,
+    validate_empty_field
+)
 
 """ Code adapted from Code Institute's "Django REST" walkthrough. """
 
@@ -19,6 +22,14 @@ class BlogSerializer(serializers.ModelSerializer):
     def validate_image(self, value):
         valid_image = validate_image(value)
         return valid_image
+
+    def validate_title(self, value):
+        valid_title = validate_empty_field(value)
+        return valid_title
+
+    def validate_content(self, value):
+        valid_content = validate_empty_field(value)
+        return valid_content
 
     def get_created_at(self, obj):
         return naturaltime(obj.created_at)
