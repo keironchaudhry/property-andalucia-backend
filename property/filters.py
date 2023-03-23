@@ -2,6 +2,11 @@ from django_filters import rest_framework as filters
 
 from .models import Property
 
+# The following links were useful as tutorials in
+# the development and understanding of custom filters.
+# URL: www.youtube.com/watch?v=s9V9F9Jtj7Q&t=248s
+# URL: www.geeksforgeeks.org/customizing-filters-in-django-rest-framework/
+
 
 class CustomFilters(filters.FilterSet):
     property_type = filters.ChoiceFilter(
